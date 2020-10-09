@@ -36,6 +36,7 @@ function AddComment(props) {
             <label>
                 Введите Ваше имя:
                 <input
+                    autoFocus={props.focus}
                     name="name"
                     type="text"
                     ref={inputNameRef}

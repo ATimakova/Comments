@@ -25,6 +25,7 @@ function Comment(props) {
         <Answer id={props.comment.id} />
         {showAnswerInput &&
             <AddComment
+                focus
                 id={props.comment.id}
                 setIsShow={setIsShow}
                 textValue="Ответить на комментарий"

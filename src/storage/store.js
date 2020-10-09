@@ -48,7 +48,32 @@ const initialState = {
             author: "Max"
         },
     ],
-    answers: []
+    answers: [
+        {
+            id: 0,
+            text: "Aenean eget maximus arcu. Pellentesque elementum blandit lectus, blandit dignissim est porta ut. ",
+            author: "Anna",
+            parent: 1,
+            date: "2020-10-06",
+            time: "23:11",
+        },
+        {
+            id: 1,
+            text: "Cras elementum laoreet risus, ac egestas urna malesuada vitae.",
+            author: "Roman",
+            parent: 1,
+            date: "2020-10-06",
+            time: "20:45",
+        },
+        {
+            id: 2,
+            text: "ok",
+            parent: 1,
+            author: "Vladimir",
+            date: "2020-10-06",
+            time: "17:36",
+        }
+    ]
 }
 
 export const store = createStore((state = initialState, action) => {

@@ -15,13 +15,17 @@ function Answer(props) {
     useEffect(() => {
     //установка отображения кнопки "показать все"
         setShowMore(props.answers.length > countShowComment)
-    }, [props.answers.length, countShowComment])
+        //проверка, раскрыты ли все сообщения для корректного отображения при добавлении нового ответа
+        if(countShowComment !== props.answers.length && isShowMore && countShowComment !== 2){
+            setCountComment(props.answers.length)
+        }
+    }, [props.answers.length, countShowComment, isShowMore])
 
     return (props.answers.length > 0
         ? <div className="answer-layout">
             {props.answers.map((answer, idx) =>
-               idx < countShowComment && <CommentBody comment={answer} key={idx} />
-            )}
+            idx < countShowComment && <CommentBody comment={answer} key={idx} />
+               )}
             {
                 isShowMore &&
                 <div
