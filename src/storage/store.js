@@ -1,6 +1,5 @@
 import moment from 'moment';
 import { createStore } from 'redux';
-import { DELETE_COMMENT } from './actions';
 
 
 //инициализируем состояние хранилища
@@ -103,8 +102,7 @@ export const store = createStore((state = initialState, action) => {
                         }
                         : { ...comment })
             }
-
-        case DELETE_COMMENT:
+        case "DELETE_COMMENT":
             return {
                 ...state,
                 comments: state.comments.filter(comment => comment.id !== action.id),
@@ -124,7 +122,6 @@ export const store = createStore((state = initialState, action) => {
                 ...state.answers]
             };
         case "EDIT_ANSWER":
-            console.log(action)
             return {
                 ...state,
                 answers: state.answers.map(answer =>
