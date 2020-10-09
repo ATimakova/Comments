@@ -51,6 +51,8 @@ function CommentBody(props) {
                                 if (!isNaN(props.comment.parent))
                                     props.deleteAnswer(props.comment.id)
                                 else props.deleteComment(props.comment.id)
+                                if (isEditComment)
+                                    setIsEdit(false)
                             }}
                             className="delete-button"
                         />
