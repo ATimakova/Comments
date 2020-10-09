@@ -11,7 +11,7 @@ import Answer from './Answer';
 
 function Comment(props) {
     //установка отображения полей ввода ответа на комментарий (по умолчанию скрыто)
-    const [showAnswerInput, setIsShow] = useState(false);
+    const [showAnswerInput, setIsShow] = useState(false); 
     return (<>
         <div className="comment-item-layout">
             <CommentBody comment={props.comment} />
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         addAnswer: (id, text) => {
             dispatch(addAnswerComment(id, text))
-        }
+        },
     }
 }
 

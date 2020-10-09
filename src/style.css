@@ -40,6 +40,34 @@
 
 /*комментарий*/
 
+.comment-info-layout{
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-button{
+  background-image: url('./icons/edit.svg');
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;          
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+.delete-button{
+  background-image: url('./icons/delete.svg');
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+  border: none;          
+  cursor: pointer;
+  margin: 5px;
+}
+
 .comment {
   width: 90%;
 }
@@ -50,6 +78,8 @@
 
 .text-comment {
   vertical-align: middle;
+  word-break: break-word;
+  padding: 5px;
 }
 
 .datetime-comment {
@@ -76,6 +106,7 @@
 .answer-button {
   display: block;
   margin: 5px 5px 5px auto;
+  cursor: pointer;
 }
 
 /*добавить комментарий*/
@@ -98,4 +129,5 @@ textarea {
   width: 99%;
   min-height: 100px;
   min-width: 99%;
+  max-width: 99%;
 }
