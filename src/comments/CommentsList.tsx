@@ -4,8 +4,13 @@
 import React, { useEffect, useState } from 'react';
 import Comment from './Comment';
 import "../style.css"
+import { CommentType } from '../storage/store';
 
-function CommentsList(props) {
+type PropsType = {
+comments: CommentType[]
+}
+
+function CommentsList(props: PropsType) {
     //инициализация отображения кнопки "Показать еще"
     const [isShowMore, setShowMore] = useState(false);
     //инициализация количества отображаемых комментариев

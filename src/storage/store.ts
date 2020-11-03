@@ -2,8 +2,29 @@ import moment from 'moment';
 import { createStore } from 'redux';
 
 
+export type InitialStateType = {
+    comments: CommentType []
+    answers: AnswerType []
+}
+export type CommentType =  {
+    id: number;
+    text: string;
+    date: string;
+    time: string;
+    author: string;
+}
+
+export type AnswerType = {
+    id: number;
+    text: string;
+    author: string;
+    parent: number;
+    date: string;
+    time: string;
+}
+
 //инициализируем состояние хранилища
-const initialState = {
+const initialState : InitialStateType = {
     comments: [
         {
             id: 0,
@@ -76,7 +97,7 @@ const initialState = {
     ]
 }
 
-export const store = createStore((state = initialState, action) => {
+export const store = createStore((state : InitialStateType = initialState, action: any) => {
     switch (action.type) {
         case "ADD_NEW_COMMENT":
             return {
